@@ -28,6 +28,40 @@ html {
     padding-right: 20px;
 }
 
+.services .container .title-section {
+    width: fit-content;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.services .container .title-section h2 {
+    font-weight: 800;
+    font-size: 100px;
+    letter-spacing: -8.09px;
+    color: #EBECED;
+    margin: 0;
+}
+
+.services .container .title-section p {
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -1.25px;
+    color: #575757;
+    margin: 0;
+    margin-top: -32px;
+}
+
+@media (min-width: 992px) {
+    .services .container .title-section h2 {
+        font-size: 120px;
+    }
+
+    .services .container .title-section p {
+        font-size: 25px;
+        margin-top: -40px;
+    }
+}
+
 @media (min-width: 768px) {
 
     .container {
@@ -210,7 +244,6 @@ header .landing .intro p:nth-of-type(1) {
     margin-top: 15px;
 }
 
-/* Large Screens  */
 @media (min-width: 992px) {
     header .landing .intro h1 {
         font-size: 70px;
@@ -232,6 +265,9 @@ header .landing .intro p:nth-of-type(1) {
 }
 
 .works .box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     text-align: center;
     padding: 20px;
     cursor: pointer;
@@ -247,22 +283,23 @@ header .landing .intro p:nth-of-type(1) {
     color: var(--main-color);
 }
 
+.works .box h3,
+.works .box p {
+    margin: 0;
+}
+
 .works .box h3 {
     font-weight: 800;
     font-size: 20px;
-    line-height: 3;
     letter-spacing: -1px;
     color: var(--second-color);
-    margin: 20px 0;
-
 }
 
 .works .box p {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 2;
     letter-spacing: -0.75px;
-    margin: 0;
 }
 
 @media (min-width: 992px) {
@@ -275,9 +312,128 @@ header .landing .intro p:nth-of-type(1) {
     }
 
     .works .box p {
-        font-size: 20px;
+        font-size: 17px;
 
     }
 }
 
 /* End Works */
+/* Start Services */
+.services {
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.services .container .content-section-services .service {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.services .container .content-section-services .service i {
+    color: var(--main-color);
+}
+
+.services .container .content-section-services .service .content h3 {
+    font-weight: 800;
+    font-size: 20px;
+    color: #1F2021;
+    margin: 0 0 20px 0;
+}
+
+.services .container .content-section-services .service .content p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.8;
+    letter-spacing: -0.75px;
+    color: #4D4C4C;
+    margin: 0;
+}
+
+.services .container .content-section-services .image {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .services .content-section-services {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .services .container .content-section-services .service {
+        flex-direction: row;
+        text-align: initial;
+        gap: 40px;
+        flex-basis: 50%;
+    }
+
+    .services .container .content-section-services .service i {
+        flex-basis: 32px;
+    }
+
+    .services .container .content-section-services .service .content {
+        flex: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .services .container .content-section-services .service .content {
+        align-self: flex-end;
+    }
+
+    .services .container .content-section-services .service i {
+        font-size: 50px;
+        flex-basis: 50px;
+    }
+
+    .services .container .content-section-services .service .content h3 {
+        font-size: 22px;
+    }
+
+    .services .container .content-section-services .service .content p {
+        font-size: 17px;
+    }
+
+    .services .container .title-section h2 {
+        font-size: 120px;
+    }
+
+    .services .container .title-section p {
+        font-size: 25px;
+    }
+}
+
+/* X-large Screens  */
+@media (min-width: 1200px) {
+    .services .content-section-services {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+    }
+
+    .services .container .content-section-services .image {
+        display: block;
+        grid-area: 1 / 3 / 3 / 4;
+        align-self: center;
+        position: relative;
+    }
+
+    .services .container .content-section-services .image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .services .container .content-section-services .image::before {
+        content: "";
+        position: absolute;
+        background-color: var(--dark-color);
+        width: 80px;
+        height: calc(100% + 60px);
+        top: -30px;
+        right: -40px;
+        z-index: -1;
+    }
+}
+
+/* End Services */
